@@ -14,6 +14,18 @@ public class ConfirmationBoolChangePositive : MonoBehaviour
     [SerializeField]
     private GameObject SupremeSF85;
 
+    [SerializeField]
+    private GameObject frontplateDefault;
+
+    [SerializeField]
+    private GameObject frontplateSmartiaS67;
+
+    [SerializeField]
+    private GameObject frontplateSupremeS500;
+
+    [SerializeField]
+    private GameObject frontplateSupremeSF85;
+
     public void ChangeBoolToTrue()
     {
         gameobjectWithBool.GetComponent<QRCodeDisplayController>().confirmation = true;
@@ -23,6 +35,10 @@ public class ConfirmationBoolChangePositive : MonoBehaviour
             SmartiaS67.SetActive(true);
             SupremeS500.SetActive(false);
             SupremeSF85.SetActive(false);
+            frontplateDefault.SetActive(false);
+            frontplateSmartiaS67.SetActive(true);
+            frontplateSupremeS500.SetActive(false);
+            frontplateSupremeSF85.SetActive(false);
         }
         else if (gameobjectWithBool.GetComponent<QRCodeDisplayController>().lastSeenCode.Data == "https://SUPREMES500.GR")
         {
@@ -30,13 +46,21 @@ public class ConfirmationBoolChangePositive : MonoBehaviour
             SupremeS500.SetActive(true);
             SmartiaS67.SetActive(false);
             SupremeSF85.SetActive(false);
+            frontplateDefault.SetActive(false);
+            frontplateSmartiaS67.SetActive(false);
+            frontplateSupremeS500.SetActive(true);
+            frontplateSupremeSF85.SetActive(false);
         }
-        else if (gameobjectWithBool.GetComponent<QRCodeDisplayController>().lastSeenCode.Data == "https://SUPREMEF85.GR")
+        else if (gameobjectWithBool.GetComponent<QRCodeDisplayController>().lastSeenCode.Data == "https://SUPREMESF85.GR")
         {
             //enable SUPREMESF85 ui
             SupremeS500.SetActive(false);
             SmartiaS67.SetActive(false);
             SupremeSF85.SetActive(true);
+            frontplateDefault.SetActive(false);
+            frontplateSmartiaS67.SetActive(false);
+            frontplateSupremeS500.SetActive(false);
+            frontplateSupremeSF85.SetActive(true);
         }
     }
 }

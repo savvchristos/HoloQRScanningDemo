@@ -26,7 +26,7 @@ public class QRCodeDisplayController : MonoBehaviour
     private GameObject SupremeS500;
 
     [SerializeField]
-    private GameObject SupremeF85;
+    private GameObject SupremeSF85;
 
     [SerializeField]
     private GameObject dialogWindow;
